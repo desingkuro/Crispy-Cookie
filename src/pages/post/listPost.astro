@@ -1,0 +1,30 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+
+const { titulo, posts } = Astro.props;
+
+interface Post {
+  data: {
+    title: string;
+    description: string;
+    pubDate: string;
+    updatedDate: string;
+    heroImage: string;
+  };
+}
+---
+
+<html lang="en">
+  <head>
+    <style></style>
+  </head>
+  <body>
+    {
+      posts.map((post: Post) => {
+        return (
+          <BaseHead title={post.data.title} description={post.data.description} />
+        );
+      })
+    }
+  </body>
+</html>

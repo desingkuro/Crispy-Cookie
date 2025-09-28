@@ -1,0 +1,15 @@
+---
+const { post } = Astro.props;
+---
+
+<div class="flex">
+  <picture>
+    <img src={post.img} alt={post.tittle} />
+  </picture>
+  <section>
+    <span>
+      {post.tittle}
+    </span>
+    <p>{post.description}</p>
+  </section>
+</div>
