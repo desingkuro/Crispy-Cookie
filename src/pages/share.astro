@@ -1,0 +1,145 @@
+---
+import Header from "../components/Header.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+
+const compartidos = [
+  {
+    id: 1,
+    titulo: "Tarta de Manzana",
+    descripcion: "Una receta clásica con masa casera y relleno dulce.",
+    imagen: "/images/recetas/tarta-manzana.jpg", // cambia la ruta según tus imágenes
+    fecha: "2025-09-21",
+    vistas: 150,
+    likes: 20,
+  },
+  {
+    id: 2,
+    titulo: "Ensalada Mediterránea",
+    descripcion: "Fresca, ligera y perfecta para el verano.",
+    imagen: "/images/recetas/ensalada.jpg",
+    fecha: "2025-09-22",
+    vistas: 80,
+    likes: 12,
+  },
+  {
+    id: 3,
+    titulo: "Brownies de Chocolate",
+    descripcion: "Suaves, húmedos y con extra de cacao.",
+    imagen: "/images/recetas/brownies.jpg",
+    fecha: "2025-09-25",
+    vistas: 200,
+    likes: 35,
+  },
+];
+---
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mis Compartidos</title>
+    
+  </head>
+  <body>
+    <main class="compartidos-container">
+      <h1>Mis Recetas Compartidas</h1>
+      <section class="grid-compartidos">
+        {compartidos.map(item => (
+          <article class="card">
+            <img src={item.imagen} alt={item.titulo} class="card-img" />
+            <div class="card-body">
+              <h2>{item.titulo}</h2>
+              <p>{item.descripcion}</p>
+              <small>📅 {item.fecha}</small>
+              <div class="stats">
+                <span>👀 {item.vistas}</span>
+                <span>❤️ {item.likes}</span>
+              </div>
+              <div class="acciones">
+                <a href={`/receta/${item.id}`} class="btn">Ver receta</a>
+                <button class="btn btn-secondary">Dejar de compartir</button>
+              </div>
+            </div>
+          </article>
+        ))}
+      </section>
+    </main>
+  </body>
+</html>
+
+<style>
+.compartidos-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.grid-compartidos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.acciones {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  background: #f59e0b;
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.btn:hover {
+  background: #d97706;
+}
+
+.btn-secondary {
+  background: #6b7280;
+}
+
+.btn-secondary:hover {
+  background: #4b5563;
+}
+</style>

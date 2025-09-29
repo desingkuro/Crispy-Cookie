@@ -1,0 +1,239 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <h1 class="text-4xl font-bold text-gray-200">🧑‍🚀 Hello, Astronaut!</h1>
+      <p>
+        Welcome to the official <a href="https://astro.build/">Astro</a> blog starter
+        template. This template serves as a lightweight, minimally-styled starting
+        point for anyone looking to build a personal website, blog, or portfolio
+        with Astro.
+      </p>
+      <p>
+        This template comes with a few integrations already configured in your
+        <code>astro.config.mjs</code> file. You can customize your setup with
+        <a href="https://astro.build/integrations">Astro Integrations</a> to add
+        tools like Tailwind, React, or Vue to your project.
+      </p>
+      <p>Here are a few ideas on how to get started with the template:</p>
+      <ul>
+        <li>Edit this page in <code>src/pages/index.astro</code></li>
+        <li>
+          Edit the site header items in <code>src/components/Header.astro</code>
+        </li>
+        <li>
+          Add your name to the footer in <code>src/components/Footer.astro</code
+          >
+        </li>
+        <li>
+          Check out the included blog posts in <code>src/content/blog/</code>
+        </li>
+        <li>
+          Customize the blog post page layout in <code
+            >src/layouts/BlogPost.astro</code
+          >
+        </li>
+      </ul>
+      <p>
+        Have fun! If you get stuck, remember to
+        <a href="https://docs.astro.build/">read the docs</a>
+        or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
+      </p>
+      <p>
+        Looking for a blog template with a bit more personality? Check out
+        <a href="https://github.com/Charca/astro-blog-template"
+          >astro-blog-template</a
+        >
+        by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
+      </p>
+    </main>
+    <Footer />
+<!-- 
+            <div class="recipes-grid">
+                
+                Recipe Card 1
+                <div class="recipe-card">
+                    <div class="recipe-image-container">
+                        <img src="https://images.unsplash.com/photo-1711539137930-3fa2ae6cec60?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZWxpY2lvdXMlMjBwYXN0YSUyMGRpc2h8ZW58MXx8fHwxNzU5MDkyNDUyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
+                             alt="Pasta Italiana Cremosa" class="recipe-image">
+                        <span class="recipe-badge">Pasta</span>
+                    </div>
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">Pasta Italiana Cremosa</h3>
+                        <p class="recipe-description">Una deliciosa pasta con salsa cremosa de parmesano y hierbas frescas. Perfecta para una cena romántica o familiar.</p>
+                        
+                        <div class="recipe-stats">
+                            <div class="stat">
+                                <svg class="star-icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                </svg>
+                                <span>4.8</span>
+                            </div>
+                            <div class="stat">
+                                <svg class="clock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12,6 12,12 16,14"/>
+                                </svg>
+                                <span>25 min</span>
+                            </div>
+                            <div class="stat">
+                                <svg class="users-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                                <span>4 porciones</span>
+                            </div>
+                        </div>
+                        
+                        <div class="recipe-author">
+                            Por <span class="author-name">María González</span>
+                        </div>
+                    </div>
+                </div>
+
+                 Recipe Card 2
+                <div class="recipe-card">
+                    <div class="recipe-image-container">
+                        <img src="https://images.unsplash.com/photo-1644158776192-2d24ce35da1d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaG9jb2xhdGUlMjBjYWtlJTIwZGVzc2VydHxlbnwxfHx8fDE3NTkwOTgzNjB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
+                             alt="Torta de Chocolate Decadente" class="recipe-image">
+                        <span class="recipe-badge">Postres</span>
+                    </div>
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">Torta de Chocolate Decadente</h3>
+                        <p class="recipe-description">Un postre irresistible con capas de chocolate húmedo y ganache sedosa. El final perfecto para cualquier comida.</p>
+                        
+                        <div class="recipe-stats">
+                            <div class="stat">
+                                <svg class="star-icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                </svg>
+                                <span>4.9</span>
+                            </div>
+                            <div class="stat">
+                                <svg class="clock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12,6 12,12 16,14"/>
+                                </svg>
+                                <span>60 min</span>
+                            </div>
+                            <div class="stat">
+                                <svg class="users-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                                <span>8 porciones</span>
+                            </div>
+                        </div>
+                        
+                        <div class="recipe-author">
+                            Por <span class="author-name">Carlos Ramírez</span>
+                        </div>
+                    </div>
+                </div>
+
+                 Recipe Card 3
+                <div class="recipe-card">
+                    <div class="recipe-image-container">
+                        <img src="https://images.unsplash.com/photo-1604909052743-94e838986d24?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncmlsbGVkJTIwY2hpY2tlbiUyMHNhbGFkfGVufDF8fHx8MTc1OTE0NDE2MXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
+                             alt="Ensalada de Pollo a la Parrilla" class="recipe-image">
+                        <span class="recipe-badge">Ensaladas</span>
+                    </div>
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">Ensalada de Pollo a la Parrilla</h3>
+                        <p class="recipe-description">Ensalada fresca y nutritiva con pollo marinado, vegetales crujientes y aderezo casero. Ideal para un almuerzo saludable.</p>
+                        
+                        <div class="recipe-stats">
+                            <div class="stat">
+                                <svg class="star-icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                </svg>
+                                <span>4.6</span>
+                            </div>
+                            <div class="stat">
+                                <svg class="clock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12,6 12,12 16,14"/>
+                                </svg>
+                                <span>20 min</span>
+                            </div>
+                            <div class="stat">
+                                <svg class="users-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                                <span>2 porciones</span>
+                            </div>
+                        </div>
+                        
+                        <div class="recipe-author">
+                            Por <span class="author-name">Ana López</span>
+                        </div>
+                    </div>
+                </div>
+
+                 Recipe Card 4
+                <div class="recipe-card">
+                    <div class="recipe-image-container">
+                        <img src="https://images.unsplash.com/photo-1734774421809-48eac182a5cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob21lbWFkZSUyMHBpenphfGVufDF8fHx8MTc1OTA3NTExMXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
+                             alt="Pizza Casera Margherita" class="recipe-image">
+                        <span class="recipe-badge">Pizza</span>
+                    </div>
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">Pizza Casera Margherita</h3>
+                        <p class="recipe-description">Pizza tradicional italiana con masa artesanal, salsa de tomate fresco, mozzarella y albahaca. ¡Como en Nápoles!</p>
+                        
+                        <div class="recipe-stats">
+                            <div class="stat">
+                                <svg class="star-icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                </svg>
+                                <span>4.7</span>
+                            </div>
+                            <div class="stat">
+                                <svg class="clock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12,6 12,12 16,14"/>
+                                </svg>
+                                <span>45 min</span>
+                            </div>
+                            <div class="stat">
+                                <svg class="users-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                                <span>3 porciones</span>
+                            </div>
+                        </div>
+                        
+                        <div class="recipe-author">
+                            Por <span class="author-name">Roberto Silva</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+-->
+    <!-- Call to Action Section -->
+    <Footer />
+</body>
+</html>

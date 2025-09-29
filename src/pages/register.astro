@@ -1,0 +1,133 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import '../styles/home.css';
+import '../pages/login.astro';
+
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse - Crispy Cooke</title>
+    <link rel="stylesheet" href="styles.css">
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="register-page">
+    <div class="register-container">
+        <div class="register-wrapper">
+            <!-- Header con logo -->
+            <div class="register-header">
+                <div class="logo">
+                    <span class="logo-text">Crispy Cooke</span>
+                </div>
+                <button class="btn btn-ghost back-btn">
+                    <a href="/">
+                    Volver al inicio</a>
+                </button>
+            </div>
+
+            <!-- Formulario de registro -->
+            <div class="card register-card">
+                <div class="card-header">
+                    <h1 class="card-title">Crear cuenta</h1>
+                    <p class="card-description">
+                        Únete a nuestra comunidad culinaria y comparte tus recetas favoritas
+                    </p>
+                </div>
+                <div class="card-content">
+                    <form class="register-form" id="registerForm">
+                        <!-- Nombre y Apellido -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName" class="form-label">Nombre</label>
+                                <input type="text" id="firstName" name="firstName" placeholder="Tu nombre" class="form-input" required>
+                                <div class="error-message" id="firstNameError"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName" class="form-label">Apellido</label>
+                                <input type="text" id="lastName" name="lastName" placeholder="Tu apellido" class="form-input" required>
+                                <div class="error-message" id="lastNameError"></div>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="form-group">
+                            <label for="email" class="form-label">Correo electrónico</label>
+                            <input type="email" id="email" name="email" placeholder="tu@email.com" class="form-input" required>
+                            <div class="error-message" id="emailError"></div>
+                        </div>
+
+                        <!-- Contraseña -->
+                        <div class="form-group">
+                            <label for="password" class="form-label">Contraseña</label>
+                            <div class="password-input-wrapper">
+                                <input type="password" id="password" name="password" placeholder="Crea una contraseña segura" class="form-input password-input" required>
+                                <button type="button" class="password-toggle" id="togglePassword">
+                                    <svg class="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                        <circle cx="12" cy="12" r="3"/>
+                                    </svg>
+                                    <svg class="eye-off-icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="m9.88 9.88a3 3 0 1 0 4.24 4.24"/>
+                                        <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 11 8 11 8a13.16 13.16 0 0 1-1.67 2.68"/>
+                                        <path d="M6.61 6.61A13.526 13.526 0 0 0 1 12s4 8 11 8a9.74 9.74 0 0 0 5.39-1.61"/>
+                                        <line x1="2" x2="22" y1="2" y2="22"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="error-message" id="passwordError"></div>
+                        </div>
+
+                        <!-- Confirmar contraseña -->
+                        <div class="form-group">
+                            <label for="confirmPassword" class="form-label">Confirmar contraseña</label>
+                            <div class="password-input-wrapper">
+                                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Repite tu contraseña" class="form-input password-input" required>
+                                <button type="button" class="password-toggle" id="toggleConfirmPassword">
+                                    <svg class="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                        <circle cx="12" cy="12" r="3"/>
+                                    </svg>
+                                    <svg class="eye-off-icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="m9.88 9.88a3 3 0 1 0 4.24 4.24"/>
+                                        <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 11 8 11 8a13.16 13.16 0 0 1-1.67 2.68"/>
+                                        <path d="M6.61 6.61A13.526 13.526 0 0 0 1 12s4 8 11 8a9.74 9.74 0 0 0 5.39-1.61"/>
+                                        <line x1="2" x2="22" y1="2" y2="22"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="error-message" id="confirmPasswordError"></div>
+                        </div>
+
+                        <!-- Botón de registro -->
+                        <button type="submit" class="btn btn-primary btn-large btn-full">
+                            Crear cuenta
+                        </button>
+                    </form>
+
+                    <div class="separator">
+                        <div class="separator-line"></div>
+                    </div>
+
+                    <!-- Enlaces adicionales -->
+                    <div class="auth-links">
+                        <span class="auth-text">¿Ya tienes una cuenta? </span>
+                        <a href="/login" class="auth-link">Iniciar sesión</a>
+                    </div>
+
+                    <div class="terms-text">
+                        Al registrarte, aceptas nuestros 
+                        <a href="#" class="terms-link">Términos de Servicio</a> 
+                        y 
+                        <a href="#" class="terms-link">Política de Privacidad</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+</body>
+</html>

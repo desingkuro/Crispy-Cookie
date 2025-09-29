@@ -1,0 +1,104 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+a {
+    color: #0073e6;
+    text-decoration: none;
+}
+.perfil-usuario {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.perfil-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+.perfil-imagen {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #e0e0e0;
+}
+.perfil-info h2 {
+    margin: 0;
+}
+.perfil-intereses {
+    margin-top: 2rem;
+}
+.perfil-intereses ul {
+    list-style: disc inside;
+    padding: 0;
+}
+.perfil-bio {
+        margin: 0.5rem 0 1rem 0;
+        font-style: italic;
+        color: #666;
+}
+.perfil-redes {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+.icono-red img {
+        filter: grayscale(0.3);
+        transition: filter 0.2s;
+    }
+.icono-red:hover img {
+        filter: grayscale(0);
+    }
+.perfil-fecha {
+        font-size: 0.95rem;
+        color: #888;
+        margin-bottom: 0.5rem;
+    }
+.btn-editar {
+        background: #f5f5f5;
+        color: #333;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 0.4rem 1rem;
+        cursor: pointer;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        transition: background 0.2s;
+    }
+.btn-editar:hover {
+        background: #e0e0e0;
+    }
+.perfil-actividad {
+        margin-top: 2rem;
+    }
+.perfil-actividad ul {
+        list-style: none;
+        padding: 0;
+    }
+.perfil-actividad li {
+        margin-bottom: 0.5rem;
+    }
+.perfil-badges {
+        margin-top: 2rem;
+    }
+.badges-list {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+}
+.badge {
+        background: #ffe9b3;
+        color: #a67c00;
+        border-radius: 1rem;
+        padding: 0.3rem 0.8rem;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}

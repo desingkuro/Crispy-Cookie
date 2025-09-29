@@ -1,0 +1,68 @@
+
+---
+import BaseHead from "../components/BaseHead.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import '../styles/home.css';
+import '../pages/login.astro';
+import Footer from "../components/Footer.astro";
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crispy Cookie</title>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+     <header class="header">
+        <div class="container header-content">
+            <!-- Logo -->
+            <div class="logo">
+                <span class="logo-text"><a href="/">Crispy Cooke</a></span>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="nav-buttons">
+                <button class="btn btn-ghost"><a href="/login">Iniciar Sesión</a></button>
+                <button class="btn btn-primary"><a href="/register">Registrarse</a></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1 class="hero-title">
+                Descubre Recetas <span class="text-orange">Deliciosas</span>
+            </h1>
+            <p class="hero-description">
+                Explora miles de recetas caseras compartidas por nuestra comunidad de chefs apasionados
+            </p>
+            
+            <div class="search-container">
+                <div class="search-input-wrapper">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/>
+                        <path d="m21 21-4.35-4.35"/>
+                    </svg>
+                    <input type="text" placeholder="Buscar recetas..." class="search-input">
+                </div>
+                <button class="btn btn-primary search-btn">Buscar</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recipes Section -->
+    <section class="recipes-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Recetas Más Populares</h2>
+                <p class="section-description">
+                    Descubre las recetas mejor valoradas por nuestra comunidad. 
+                    Cada una ha sido probada y perfeccionada por chefs caseros como tú.
+                </p>
+            </div>
+  </body>
+</html>

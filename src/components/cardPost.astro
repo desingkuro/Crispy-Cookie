@@ -1,0 +1,35 @@
+---
+const { post, edit = null } = Astro.props;
+---
+
+<div
+  class="flex h-[300px] w-[300px] rounded-lg flex-col overflow-hidden shadow-2xl"
+>
+  <picture class="h-1/2 w-full overflow-hidden">
+    <img
+      src={post.img}
+      alt={post.tittle}
+      class="w-full h-full object-contain hover:scale-110 transition-all duration-300 ease-in-out"
+    />
+  </picture>
+  <section class="flex flex-col h-1/2 p-2 gap-2">
+    <span
+      class="text-2xl line-clamp-1 font-bold hover:text-gray-600 cursor-pointer"
+    >
+      {post.tittle}
+    </span>
+    <p class="text-lg line-clamp-2 hover:text-gray-600 cursor-pointer">
+      {post.description}
+    </p>
+    {
+      edit && (
+        <button
+          class="w-1/2 bg-blue-600 hover:bg-blue-400 transition-all duration-300 ease-in-out font-semibold cursor-pointer text-white rounded-lg"
+          onclick={edit}
+        >
+          Editar
+        </button>
+      )
+    }
+  </section>
+</div>

@@ -1,0 +1,92 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";   
+import '../styles/perfil.css';
+const user = {
+    nombre: "Valentina",
+    apellido: "Gómez",
+    usuario: "valengomez",
+    intereses: ["Recetas dulces", "Recetas saladas"],
+    imagen: "/images/usuarios/valentina.jpg", // Cambia la ruta según tu imagen
+    bio: "Apasionada por la repostería y los platos típicos.",
+    email: "valentina@email.com",
+    redes: {
+        instagram: "https://instagram.com/valengomez",
+        tiktok: "https://tiktok.com/@valengomez",
+        twitter: "https://twitter.com/valengomez"
+    },
+    fechaRegistro: "2023-05-10",
+    actividadReciente: [
+        { tipo: "receta", titulo: "Tarta de manzana", link: "/recetas/tarta-manzana" },
+        { tipo: "comentario", titulo: "Brownies de chocolate", link: "/recetas/brownies-chocolate" }
+    ],
+    badges: [
+        { nombre: "Top Chef" },
+        { nombre: "Amante de lo dulce"},
+        { nombre: "5 recetas compartidas"}
+    ]
+};
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Document</title>
+     
+
+
+
+    </head>
+    <body>
+        <main class="perfil-usuario">
+    <body>
+        
+    </body>
+    <section class="perfil-header">
+        <img src={user.imagen} alt="Imagen de usuario" class="perfil-imagen" />
+        <div class="perfil-info">
+            <h2>{user.nombre} {user.apellido}</h2>
+            <p><strong>Usuario:</strong> @{user.usuario}</p>
+            <p class="perfil-bio">{user.bio}</p>
+            <div class="perfil-redes">
+                <a href={user.redes.instagram} target="_blank" title="Instagram" class="icono-red"><img src="https://simpleicons.org/icons/instagram.svg" alt="Instagram" width="24" height="24" /></a>
+                <a href={user.redes.tiktok} target="_blank" title="TikTok" class="icono-red"><img src="https://simpleicons.org/icons/tiktok.svg" alt="TikTok" width="24" height="24" /></a>
+                <a href={user.redes.twitter} target="_blank" title="Twitter" class="icono-red"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/twitter/twitter-original.svg" alt="Twitter" width="24" height="24" /></a>
+                <a href={`mailto:${user.email}`} title="Correo" class="icono-red"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Correo" width="24" height="24" /></a>
+            </div>
+            <p class="perfil-fecha">Miembro desde: {user.fechaRegistro}</p>
+            <button class="btn-editar">Editar perfil</button>
+        </div>
+    </section>
+    <section class="perfil-intereses">
+        <h3>Mis intereses</h3>
+        <ul>
+            {user.intereses.map(interes => (
+                <li>{interes}</li>
+            ))}
+        </ul>
+    </section>
+    <section class="perfil-actividad">
+        <h3>Actividad reciente</h3>
+        <ul>
+            {user.actividadReciente.map(item => (
+                <li>
+                    {item.tipo === "receta" ? "📝" : "💬"} <a href={item.link}>{item.titulo}</a>
+                </li>
+            ))}
+        </ul>
+    </section>
+    <section class="perfil-badges">
+        <h3>Logros</h3>
+        <div class="badges-list">
+            {user.badges.map(badge => (
+                <span class="badge">{badge.nombre} {badge.nombre}</span>
+            ))}
+        </div>
+    </section>
+</main>
+    </body>
+</html>
+
